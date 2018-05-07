@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="Content/style.css" />
+
+<input type="button" id="StartCountdownBtn" value="Start Countdown" />
+<input type="button" id="StopCountdownbtn" value="Stop Countdown" />
+
+<div id="timer" class="timer">5:00</div>
+
+
+<!--Include jQuery-->
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+<!--Include Moment JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.js"></script>
+
+<!--Include Moment JS Locale (Not 100% Sure I need this yet)-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/locale/es-us.js"></script>
+
+<!--Include local script file with counter functions-->
+<script src="Scripts/timerFunctions.js"></script>
+
+<!-- Page script content for jQuery event handling-->
+<script type="text/javascript">
+    $("document").ready(function () {
+        // Start timer on button click
+        $("#StartCountdownBtn").on("click", function () {
+            StartCountdownTimer(5, 'm', 'timer');
+        })
+    });
+
+    // Stop timer on button click
+    $("#StopCountdownbtn").on("click", function () {
+        StopCountdownTimer('timer');
+    });
+</script>
